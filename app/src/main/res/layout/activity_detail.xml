@@ -162,7 +162,7 @@
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/vs_20" />
                     <TextView
-                        android:id="@+id/uvPlay"
+                        android:id="@+id/ucPlay"
                         android:layout_width="@dimen/vs_120"
                         android:layout_height="@dimen/vs_40"
                         android:layout_marginEnd="@dimen/vs_10"
