@@ -154,6 +154,7 @@ public class DetailActivity extends BaseActivity {
   @Override
             public void onClick(View v) {
                 FastClickCheckUtil.check(v);
+                awakeOtherBrowser();
                 jumpToPlay();
             }
         });
