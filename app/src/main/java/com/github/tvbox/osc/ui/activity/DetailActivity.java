@@ -153,9 +153,7 @@ public class DetailActivity extends BaseActivity {
          ucPlay.setOnClickListener(new View.OnClickListener() {
   @Override
             public void onClick(View v) {
-                FastClickCheckUtil.check(v);
-                awakeOtherBrowser();
-                jumpToPlay();
+                awakeOtherBrowser(v);
             }
         });
         tvQuickSearch.setOnClickListener(new View.OnClickListener() {
