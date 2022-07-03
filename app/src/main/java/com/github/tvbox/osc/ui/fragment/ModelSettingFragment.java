@@ -46,6 +46,7 @@ public class ModelSettingFragment extends BaseLazyFragment {
     private TextView tvMediaCodec;
     private TextView tvParseWebView;
     private TextView tvPlay;
+    private TextView ucPlay;
     private TextView tvRender;
     private TextView tvScale;
     private TextView tvApi;
@@ -73,6 +74,7 @@ public class ModelSettingFragment extends BaseLazyFragment {
         tvParseWebView = findViewById(R.id.tvParseWebView);
         tvMediaCodec = findViewById(R.id.tvMediaCodec);
         tvPlay = findViewById(R.id.tvPlay);
+        ucPlay = findViewById(R.id.ucPlay); 
         tvRender = findViewById(R.id.tvRenderType);
         tvScale = findViewById(R.id.tvScaleType);
         tvApi = findViewById(R.id.tvApi);
@@ -90,6 +92,7 @@ public class ModelSettingFragment extends BaseLazyFragment {
         tvHomeApi.setText(ApiConfig.get().getHomeSourceBean().getName());
         tvScale.setText(PlayerHelper.getScaleName(Hawk.get(HawkConfig.PLAY_SCALE, 0)));
         tvPlay.setText(PlayerHelper.getPlayerName(Hawk.get(HawkConfig.PLAY_TYPE, 0)));
+        ucPlay.setText(PlayerHelper.getPlayerName(Hawk.get(HawkConfig.PLAY_TYPE, 0)));
         tvRender.setText(PlayerHelper.getRenderName(Hawk.get(HawkConfig.PLAY_RENDER, 0)));
         findViewById(R.id.llDebug).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -326,6 +329,7 @@ public class ModelSettingFragment extends BaseLazyFragment {
                     public void click(Integer value, int pos) {
                         Hawk.put(HawkConfig.PLAY_TYPE, value);
                         tvPlay.setText(PlayerHelper.getPlayerName(value));
+                        ucPlay.setText(PlayerHelper.getPlayerName(value));
                         PlayerHelper.init();
                     }
 
