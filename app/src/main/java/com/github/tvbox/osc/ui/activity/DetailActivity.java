@@ -151,41 +151,10 @@ public class DetailActivity extends BaseActivity {
             }
         });
          ucPlay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {                
+  @Override
+            public void onClick(View v) {
                 FastClickCheckUtil.check(v);
-                String[] browser = { "com.UCMobile", "com.uc.browser", "com.oupeng.browser", "com.oupeng.mini.android", "com.android.browser" };
-Intent intent = null;
-for (String br : browser) {
-if (KpshUtils.getAppIsInstall(kActivity, br)) {
-String clsName = null;
-try {
-PackageManager pm = kActivity.getApplicationContext().getPackageManager();
-Intent intent1 = pm.getLaunchIntentForPackage(br);
-ComponentName act = intent1.resolveActivity(pm);
-clsName = act.getClassName();
-KpshLog.d(KpshActivity.class, "clsName = " + clsName);
-} catch (Exception e) {
-KpshLog.e(e);
-}
-if (clsName == null) {
-break;
-}
-intent = new Intent();
-intent.setAction("android.intent.action.VIEW");
-Uri content_url = Uri.parse(url);
-intent.setData(content_url);
-intent.setClassName(br, clsName);
-break;
-}
-}
-if (intent == null) {
-intent = new Intent();
-intent.setAction("android.intent.action.VIEW");
-Uri content_url = Uri.parse(url);
-intent.setData(content_url);
-}
-kActivity.startActivity(intent);;
+                jumpToPlay();
             }
         });
         tvQuickSearch.setOnClickListener(new View.OnClickListener() {
